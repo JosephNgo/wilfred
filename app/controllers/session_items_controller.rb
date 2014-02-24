@@ -71,9 +71,7 @@ class SessionItemsController < ApplicationController
   def destroy
     return_item_to_inventory
     @session_item.destroy
-
     respond_to do |format|
-
       format.html { redirect_to session_items_url }
       format.json { head :no_content }
     end

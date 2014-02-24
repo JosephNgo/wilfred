@@ -12,7 +12,7 @@
   </thead>
 
   <tbody>
-    <% @sessions.each do |session| %>
+    <% @sessions.reorder('name').each do |session| %>
       <tr>
         <td><%= session.name %></td>
         <td><%= session.date %></td>
