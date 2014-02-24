@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @session.name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @session.date %>
+</p>
+
+<h3>List of items for this session</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>QTY</th>
+      <th>Note</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @session.session_items.each do |session_item| %>
+      <tr>
+        <td><%= session_item.item.name %></td>
+        <td><%= session_item.session_qty %></td>
+        <td><%= session_item.note %></td>
+        <td><%= link_to 'Show', session_item %></td>
+        <td><%= link_to 'Edit', edit_session_item_path(session_item) %></td>
+        <td><%= link_to 'Destroy', session_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+  <%= link_to 'Add new session item', new_session_item_path %>
+</table>
+
+<%= link_to 'Edit', edit_session_path(@session) %> |
+<%= link_to 'Back', sessions_path %>

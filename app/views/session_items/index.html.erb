@@ -1,0 +1,33 @@
+<h1>Listing session_items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>|Item|</th>
+      <th>|Session|</th>
+      <th>|QTY|</th>
+      <th>|Note|</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @session_items.each do |session_item| %>
+      <tr>
+        <td><%= session_item.item.name %></td>
+        <td><%= session_item.session.name %></td>
+        <td><%= session_item.session_qty %></td>
+        <td><%= session_item.note %></td>
+        <td><%= link_to 'Show', session_item %></td>
+        <td><%= link_to 'Edit', edit_session_item_path(session_item) %></td>
+        <td><%= link_to 'Destroy', session_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Session item', new_session_item_path %>
