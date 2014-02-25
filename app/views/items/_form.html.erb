@@ -11,23 +11,36 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :drawing_number %><br>
-    <%= f.text_field :drawing_number %>
-  </div>
-  <div class="field">
-    <%= f.label :qty %><br>
-    <%= f.number_field :qty %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <form>
+    <div class="row">
+      <div class="large-12 columns field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns field">
+        <%= f.label :description %><br>
+        <%= f.text_area :description %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns field">
+        <%= f.label :drawing_number %><br>
+        <%= f.text_field :drawing_number %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns field">
+        <%= f.label :qty %><br>
+        <%= f.number_field :qty %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns actions">
+        <%= f.submit %>
+      </div>
+    </div>
+  </form>
+
 <% end %>

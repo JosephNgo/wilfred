@@ -2,14 +2,34 @@
 <html>
 <head>
   <title>Wilfred</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+
+  <link rel="stylesheet" type="text/css" href/app/assets/stylesheets/foundation.css>
+  <%= stylesheet_link_tag    "application", media: "all"%>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
-<%= link_to 'Items', items_path %>
-<%= link_to 'Sessions', sessions_path %>
-<%= link_to 'Session Items', session_items_path %>
+<div class="fixed">
+	<nav class="top-bar" data-topbar>
+	  <ul class="title-area">
+	    <li class="name">
+	      <h1><a href="#">Wilfred Home</a></h1>
+	    </li>
+	    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+	  </ul>
+
+	  <section class="top-bar-section">
+	    <!-- Right Nav Section -->
+	    <ul class="right">
+	      <li><%= link_to 'Items', items_path %></li>
+		  <li><%= link_to 'Sessions', sessions_path %></li>
+		  <li><%= link_to 'Session Items', session_items_path %></li>
+	    </ul>
+
+	  </section>
+	</nav>
+</div>
 
 <%= yield %>
 
