@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Description</th>
       <th>Date</th>
       <th></th>
       <th></th>
@@ -15,6 +16,7 @@
     <% @sessions.reorder('name').each do |session| %>
       <tr>
         <td><%= session.name %></td>
+        <td><%= session.description %></td>
         <td><%= session.date %></td>
         <td><%= link_to 'Show', session %></td>
         <td><%= link_to 'Edit', edit_session_path(session) %></td>
