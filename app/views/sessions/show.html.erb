@@ -9,36 +9,42 @@
   <strong>Date:</strong>
   <%= @session.date %>
 </p>
+<div class="row">
+  <div class="large-8 columns">
+    <h3>List of items for this session</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>QTY</th>
+          <th>Note</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
 
-<h3>List of items for this session</h3>
+      <tbody>
+        <% @session.session_items.each do |session_item| %>
+          <tr>
+            <td><%= session_item.item.name %></td>
+            <td><%= session_item.session_qty %></td>
+            <td><%= session_item.note %></td>
+            <td><%= link_to 'Show', session_item %></td>
+            <td><%= link_to 'Edit', edit_session_item_path(session_item) %></td>
+            <td><%= link_to 'Destroy', session_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+      <%= link_to 'Add new session item', new_session_item_path, :class => "button" %>
+    </table>
+  </div>
+  <div class="large-4 columns">
+    <img src="http://www.nasa.gov/images/content/65920main_aem.jpg">
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Item</th>
-      <th>QTY</th>
-      <th>Note</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @session.session_items.each do |session_item| %>
-      <tr>
-        <td><%= session_item.item.name %></td>
-        <td><%= session_item.session_qty %></td>
-        <td><%= session_item.note %></td>
-        <td><%= link_to 'Show', session_item %></td>
-        <td><%= link_to 'Edit', edit_session_item_path(session_item) %></td>
-        <td><%= link_to 'Destroy', session_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-
-  <%= link_to 'Add new session item', new_session_item_path %>
-</table>
-
-<%= link_to 'Edit', edit_session_path(@session) %> |
-<%= link_to 'Back', sessions_path %>
+<div class="row">
+  <%= link_to 'Edit', edit_session_path(@session), :class => "button" %>
+  <%= link_to 'Back', sessions_path, :class => "button" %>
+</div>

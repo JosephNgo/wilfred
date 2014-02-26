@@ -1,6 +1,7 @@
 <h1>Editing Session Item</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @session_item %> |
-<%= link_to 'Back', session_items_path %>
+<div class="row">
+	<%= link_to 'Item', @session_item, :class => "button" %>
+	<%= link_to 'List of Session Items', session_items_path, :class => "button" %>
+</div>

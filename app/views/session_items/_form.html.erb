@@ -11,23 +11,37 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :item_id  %><br>
-    <%= f.select(:item_id, Item.order("name").map {|s| [s.name, s.id]}) %>
-  </div>
-  <div class="field">
-    <%= f.label :session_id %><br>
-    <%= f.select(:session_id, Session.order("id").map {|s| [s.name, s.id]}) %>
-  </div>
-  <div class="field">
-    <%= f.label :session_qty %><br>
-    <%= f.number_field :session_qty %>
-  </div>
-  <div class="field">
-    <%= f.label :note %><br>
-    <%= f.text_area :note %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <form>
+    <div class="row">
+      <div class="large-12 columns field">
+        <%= f.label :item_id  %><br>
+        <%= f.select(:item_id, Item.order("name").map {|s| [s.name, s.id]}) %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns field">
+        <%= f.label :session_id %><br>
+        <%= f.select(:session_id, Session.order("id").map {|s| [s.name, s.id]}) %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns field">
+        <%= f.label :session_qty %><br>
+        <%= f.number_field :session_qty %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns field">
+        <%= f.label :note %><br>
+        <%= f.text_area :note %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns actions">
+        <%= button_tag(type: 'submit' , class: "button") do %>
+          Save
+        <% end %>
+      </div>
+    </div>
+  </form>
 <% end %>
