@@ -1,5 +1,5 @@
 class AddDescriptionToSessions < ActiveRecord::Migration
   def change
-    add_column :sessions, :description, :text, :default => "update description"
+    add_column :sessions, :description, :text
   end
 end

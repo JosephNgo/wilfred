@@ -11,19 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description, :rows => 6, :cols => 50 %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.date_field :date %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <form>
+    <div class="row">
+      <div class="large-12 columns field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns field">
+        <%= f.label :description %><br>
+        <%= f.text_area :description %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns field">
+        <%= f.label :date %><br>
+        <%= f.date_field :date %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns actions">
+        <%= f.submit %>
+      </div>
+    </div>
+  </form>
+
 <% end %>
