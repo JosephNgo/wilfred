@@ -1,24 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @item.name %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
 
-<p>
-  <strong>Drawing number:</strong>
-  <%= @item.drawing_number %>
-</p>
+<div class="row">
+	<div class="large-4 columns">
+		<p>
+		  <strong>Name:</strong>
+		  <%= @item.name %>
+		</p>
 
-<p>
-  <strong>Qty:</strong>
-  <%= @item.qty %>
-</p>
+		<p>
+		  <strong>Description:</strong>
+		  <%= @item.description %>
+		</p>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+		<p>
+		  <strong>Drawing number:</strong>
+		  <%= @item.drawing_number %>
+		</p>
+
+		<p>
+		  <strong>Qty:</strong>
+		  <%= @item.qty %>
+		</p>
+	</div>
+	<div class="large-8 columns">
+		<img src="http://www.nasa.gov/images/content/65920main_aem.jpg">
+	</div>
+</div>
+
+<div class="row">
+	<%= link_to 'Edit', edit_item_path(@item), :class => 'button green' %> 
+	<%= link_to 'List of Items', items_path, :class => 'button' %>
+</div>
