@@ -27,7 +27,6 @@ class SessionItemsController < ApplicationController
     @session_item = SessionItem.new(session_item_params)
     respond_to do |format|
       if @session_item.save
-        remove_item_from_inventory
         format.html { redirect_to @session_item, notice: 'Session item was successfully created.' }
         format.json { render action: 'show', status: :created, location: @session_item }
       else
