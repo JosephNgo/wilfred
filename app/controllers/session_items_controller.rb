@@ -1,5 +1,7 @@
 class SessionItemsController < ApplicationController
   before_action :set_session_item, only: [:show, :edit, :update, :destroy]
+  
+
 
   # GET /session_items
   # GET /session_items.json
